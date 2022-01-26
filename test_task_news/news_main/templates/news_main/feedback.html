@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
-    <header class="header">
-        <nav>
-            <ul class="nav__links">
-                <img src="logo.png" class="logo" alt="">
-                <li class="link"><a href="#">Главная</a></li>
-                <li class="link"><a href="#">Новости</a></li>
-                <li class="link"><a href="#">Контакты</a></li>
-                <li class="link"><a href="#">О нас</a></li>
-                <li class="link"><a href="#">Обратная связь</a></li>
-            </ul>
-        </nav>
-    </header>
-    <form class="mainform">
-        <p class="name">
-            <input type="text" name="name" value="Имя">
-        </p>
-        <p class="email">
-            <input type="text" name="email" value="name@example.com">
-        </p>
+{% extends 'news_main/base.html' %}
+% load static %}
+{% block content %}
+<form class="mainform">
+    <p class="name">
+        <input type="text" name="name" value="Имя">
+    </p>
+    <p class="email">
+        <input type="text" name="email" value="name@example.com">
+    </p>
     <p class="message">
         <textarea name="msg">Текст сообщения</textarea>
-        <p class="send"><input type="submit" value="Отправить"></p>
+    <p class="send"><input type="submit" value="Отправить"></p>
     </p>
-    </form>
-</div>
-
-
-</body>
-</html>
+</form>
+{% endblock content %}

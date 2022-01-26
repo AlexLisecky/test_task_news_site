@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock css %}
+</head>
+<body>
+<div class="container">
+    {% block header %}
+    <header class="header">
+        <nav>
+            <ul class="nav__links">
+                <img src="logo.png" class="logo" alt="">
+                <li class="link"><a href="#">Главная</a></li>
+                <li class="link"><a href="#">Новости</a></li>
+                <li class="link"><a href="#">Контакты</a></li>
+                <li class="link"><a href="#">О нас</a></li>
+                <li class="link"><a href="#">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% endblock header %}
+    {% block content %}
+    {% endblock content %}
+</div>
+</body>
+</html>

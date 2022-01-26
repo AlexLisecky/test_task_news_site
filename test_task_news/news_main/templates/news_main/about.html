@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
-    <header class="header">
-        <nav>
-            <ul class="nav__links">
-                <img src="logo.png" class="logo" alt="">
-                <li class="link"><a href="#">Главная</a></li>
-                <li class="link"><a href="#">Новости</a></li>
-                <li class="link"><a href="#">Контакты</a></li>
-                <li class="link"><a href="#">О нас</a></li>
-                <li class="link"><a href="#">Обратная связь</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="about__content">Lorem ipsum dolor sit amet consectetur 
-        adipisicing elit. Inventore quae ipsam culpa reprehenderit
-         explicabo ipsa velit possimus, blanditiis sit. Deleniti f
-         acilis unde, laudantium excepturi consequuntur similique 
-         fugit eos culpa eius tenetur id? Temporibus accusantium quos, 
-         reiciendis veritatis in nulla, repudiandae rem architecto qui 
-         eque magni fugiat nostrum similique maiores quasi?</div>
+{% extends 'news_main/base.html' %}
+% load static %}
+{% block content %}
+<div class="about__content">Lorem ipsum dolor sit amet consectetur
+    adipisicing elit. Inventore quae ipsam culpa reprehenderit
+    explicabo ipsa velit possimus, blanditiis sit. Deleniti f
+    acilis unde, laudantium excepturi consequuntur similique
+    fugit eos culpa eius tenetur id? Temporibus accusantium quos,
+    reiciendis veritatis in nulla, repudiandae rem architecto qui
+    eque magni fugiat nostrum similique maiores quasi?
 </div>
-
-
-</body>
-</html>
+{% endblock content %}

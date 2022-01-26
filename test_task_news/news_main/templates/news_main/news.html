@@ -1,45 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
-    <header class="header">
-        <nav>
-            <ul class="nav__links">
-                <img src="logo.png" class="logo" alt="">
-                <li class="link"><a href="#">Главная</a></li>
-                <li class="link"><a href="#">Новости</a></li>
-                <li class="link"><a href="#">Контакты</a></li>
-                <li class="link"><a href="#">О нас</a></li>
-                <li class="link"><a href="#">Обратная связь</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="content">
-        <div class="news">
-            <h2 class="news__header">Заголовок</h2>
-            <p class="news__desc">Lorem ipsum dolor sit amet 
-                consectetur, adipisicing elit. Laborum voluptatibus 
-                illo recusandae dolorem velit ipsum alias ut, porro 
-                accusamus ex! Sequi ipsa optio deleniti incidunt vitae 
-                e debitis, at aspernatur.</p>
-            <div class="news__date">
-                <div class="news__date_created">Дата создания:10.00.2020</div>
-                <div class="news__date_updated">Дата обновления:10.00.2020</div>
-                <div class="news__watch">Просмотров: 5</div>
-            </div>
-            <div class="news__comment_block">
-                <div class="comment">очень круто</div>
-                <div class="comment__date">12.00.0000</div>
-            </div>
+{% extends 'news_main/base.html' %}
+% load static %}
+{% block content %}
+<div class="content">
+    <div class="news">
+        <h2 class="news__header">Заголовок</h2>
+        <p class="news__desc">Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Laborum voluptatibus
+            illo recusandae dolorem velit ipsum alias ut, porro
+            accusamus ex! Sequi ipsa optio deleniti incidunt vitae
+            e debitis, at aspernatur.</p>
+        <div class="news__date">
+            <div class="news__date_created">Дата создания:10.00.2020</div>
+            <div class="news__date_updated">Дата обновления:10.00.2020</div>
+            <div class="news__watch">Просмотров: 5</div>
+        </div>
+        <div class="news__comment_block">
+            <div class="comment">очень круто</div>
+            <div class="comment__date">12.00.0000</div>
         </div>
     </div>
 </div>
-
-
-</body>
-</html>
+{% endblock content %}

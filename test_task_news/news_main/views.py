@@ -7,7 +7,8 @@ from .models import News, Comment
 class IndexView(ListView):
     template_name = 'news_main/index.html'
     model = News
-    queryset = News.objects.all()[:5]
+    queryset = News.objects.all().order_by('-views')[:5]
+    context_object_name = 'news'
 
 
 class NewsView(ListView):

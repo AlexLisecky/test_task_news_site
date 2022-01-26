@@ -2,23 +2,20 @@
 % load static %}
 {% block content %}
     <div class="content">
-        
+        {% for new in news %}
         <div class="news">
-            <h2 class="news__header">Заголовок</h2>
-            <p class="news__desc">Lorem ipsum dolor sit amet 
-                consectetur, adipisicing elit. Laborum voluptatibus 
-                illo recusandae dolorem velit ipsum alias ut, porro 
-                accusamus ex! Sequi ipsa optio deleniti incidunt vitae 
-                e debitis, at aspernatur.</p>
+            <h4 class="news__header">{{ new.title }}</h4>
+            <p class="news__desc">{{ new.description }}</p>
             <div class="news__date">
-                <div class="news__date_created">Дата создания:10.00.2020</div>
-                <div class="news__date_updated">Дата обновления:10.00.2020</div>
-                <div class="news__watch">Просмотров: 5</div>
+                <div class="news__date_created">Дата создания:{{ new.created_at }}</div>
+                <div class="news__date_updated">Дата обновления:{{ new.updated_at }}</div>
+                <div class="news__watch">Просмотры: {{ new.views }}</div>
             </div>
             <div class="news__comment_block">
                 <div class="comment">очень круто</div>
                 <div class="comment__date">12.00.0000</div>
             </div>
         </div>
+        {% endfor %}
     </div>
 {% endblock content %}

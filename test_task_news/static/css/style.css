@@ -21,6 +21,10 @@ body{
   height: 100px;
 }
 
+.header {
+  background-color: lightgray;
+}
+
 
 .nav__links {
   display: flex;
@@ -32,9 +36,18 @@ body{
   
 }
 
-.link{
+.link { 
   padding-top: 30px;
   text-decoration: none;
+  margin-right: 30px;
+}
+
+.news {
+  background-color: gray;
+}
+
+.news__desc {
+  margin-left: 20px;
 }
 
 .news__date{
@@ -87,6 +100,31 @@ body{
 
 .about__content {
   margin-top: 40px;
+}
+
+.contact {
+  background-color: gray;
+}
+
+.about__content {
+  background-color: gray;
+}
+
+
+input[type=text] {
+  padding:10px;
+  margin:10px 0;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+textarea {
+  width: 800px;
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+  height:150px;
 }
 
 

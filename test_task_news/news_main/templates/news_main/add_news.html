@@ -1,7 +1,7 @@
 {% extends 'news_main/base.html' %}
 {% load static %}
 {% block content %}
-    <h1>New post</h1>
+    <h1>Add news</h1>
     <form action="" method="post">{% csrf_token %}
       {{ form.as_p }}
       <input type="submit" value="Создать" />

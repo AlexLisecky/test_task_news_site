@@ -14,7 +14,9 @@
     <header class="header">
         <nav>
             <ul class="nav__links">
-                <img src="{% static 'img/logo.png' %}" class="logo" alt="">
+                <a href="{% url 'main:index' %}">
+                    <img src="{% static 'img/logo.png' %}" class="logo" alt="">
+                </a>
                 <li class="link"><a href="{% url 'main:index' %}">Главная</a></li>
                 <li class="link"><a href="{% url 'main:news' %}">Новости</a></li>
                 <li class="link"><a href="{% url 'main:contacts' %}">Контакты</a></li>

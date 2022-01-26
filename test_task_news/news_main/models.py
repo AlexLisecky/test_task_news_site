@@ -6,7 +6,7 @@ class News(models.Model):
     description = models.TextField(max_length=500, verbose_name='Описание')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
-    views = models.IntegerField(verbose_name='Просмотры')
+    views = models.IntegerField(verbose_name='Просмотры', default=0)
 
     def __str__(self):
         return self.title

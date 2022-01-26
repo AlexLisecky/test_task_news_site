@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, UpdateView
 
 from .models import News, Comment
 
@@ -31,3 +31,16 @@ class AboutView(ListView):
 class FeedbackView(ListView):
     template_name = 'news_main/feedback.html'
     queryset = []
+
+
+class NewsCreateView(CreateView):
+    model = News
+    template_name = 'news_main/add_news.html'
+    success_url = '/'
+    fields = ['title', 'description']
+
+
+class NewsUpdateView(UpdateView):
+    model = News
+    template_name = 'news_main/update_news.html'
+    fields = ['title', 'description']

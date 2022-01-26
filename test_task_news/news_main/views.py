@@ -10,10 +10,17 @@ class IndexView(ListView):
     queryset = News.objects.all().order_by('-views')[:5]
     context_object_name = 'news'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comments'] = Comment.objects.all()
+        return context
+
 
 class NewsView(ListView):
     template_name = 'news_main/news.html'
-    queryset = []
+    model = News
+    queryset = News.objects.all()
+    context_object_name = 'news'
 
 
 class ContactView(ListView):

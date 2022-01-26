@@ -17,7 +17,7 @@ class NewsView(ListView):
     """ Страница новостей"""
     template_name = 'news_main/news.html'
     model = News
-    queryset = News.objects.all()
+    queryset = News.objects.all().order_by('-created_at')
     context_object_name = 'news'
 
 

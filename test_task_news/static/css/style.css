@@ -34,9 +34,18 @@ body{
 .content__info {
   width: 562px;
   margin: 220px auto 64px;
+  text-align: center;
 
 }
 
+.content{
+  width: 1280px;
+  margin: 128px auto 0;
+}
+.info__header{
+  margin-bottom: 16px;
+  text-align: center;
+}
 
 .link__block {
   display: flex;
@@ -128,16 +137,21 @@ body{
 
 .contact {
   list-style-type: none;
+  padding-left: 16px;
   margin-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #F4F6FC;
+  width: 762px;
+  margin: 32px auto;
+}
+
+.contact__p{
+  margin: 16px 0 16px;
 }
 
 .about__content {
   margin-top: 40px;
-}
-
-.contact {
-  background-color: gray;
 }
 
 .about__content {

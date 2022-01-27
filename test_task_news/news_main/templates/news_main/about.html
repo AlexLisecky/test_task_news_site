@@ -1,12 +1,16 @@
 {% extends 'news_main/base.html' %}
-% load static %}
+{% load static %}
 {% block content %}
-<div class="about__content">Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Inventore quae ipsam culpa reprehenderit
-    explicabo ipsa velit possimus, blanditiis sit. Deleniti f
-    acilis unde, laudantium excepturi consequuntur similique
-    fugit eos culpa eius tenetur id? Temporibus accusantium quos,
-    reiciendis veritatis in nulla, repudiandae rem architecto qui
-    eque magni fugiat nostrum similique maiores quasi?
-</div>
+<div class="content">
+    <div class="about__as__block">
+        <div class="about__info">
+            <h6>About as</h6>
+            <h2>Our designs solve problems</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam.</p>
+        </div>
+        <img class="about__img" src="{% static 'img/about_as' %}" alt="">
+    </div> 
+</div> 
 {% endblock content %}

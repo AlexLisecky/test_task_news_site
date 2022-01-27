@@ -11,21 +11,7 @@
 <body>
 <div class="container">
     {% block header %}
-    <header class="header">
-        <nav>
-            <ul class="nav__links">
-                <a href="{% url 'main:index' %}">
-                    <img src="{% static 'img/logo.png' %}" class="logo" alt="">
-                </a>
-                <li class="link"><a href="{% url 'main:index' %}">Главная</a></li>
-                <li class="link"><a href="{% url 'main:news' %}">Новости</a></li>
-                <li class="link"><a href="{% url 'main:contacts' %}">Контакты</a></li>
-                <li class="link"><a href="{% url 'main:about' %}">О нас</a></li>
-                <li class="link"><a href="{% url 'main:feedback' %}">Обратная связь</a></li>
-                <li class="link"><a href="{% url 'main:news_add' %}">Добавить</a></li>
-            </ul>
-        </nav>
-    </header>
+    {% include 'news_main/includes/menu.html' %}
     {% endblock header %}
     {% block content %}
     {% endblock content %}

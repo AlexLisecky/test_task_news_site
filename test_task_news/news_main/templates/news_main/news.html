@@ -8,19 +8,20 @@
         <h4 class="news__header">{{ new.title }}</h4>
         <p class="news__desc">{{ new.description }}</p>
         <div class="news__date">
-            <div class="news__date_created">Дата создания:{{ new.created_at }}</div>
-            <div class="news__date_updated">Дата обновления:{{ new.updated_at }}</div>
+            <div class="news__date_created">Дата создания:{{ new.created_at|date:"M d, Y" }}</div>
+            <div class="news__date_updated">Дата обновления:{{ new.updated_at|date:"M d, Y" }}</div>
             <div class="news__watch">Просмотры: {{ new.views }}</div>
-            <a href="{% url 'main:news_edit' new.pk %}">edit</a>
-            <a href="{% url 'main:news_delete' new.pk %}">удалить</a>
+        </div>
+        <div class="news__links">
+            <a class="news__first" href="{% url 'main:news_edit' new.pk %}">Редактирвать</a>
+            <a href="{% url 'main:news_delete' new.pk %}">Удалить</a>
         </div>
         {% for comm in new.comment_set.all %}
         <div class="news__comment_block">
             <div class="comment">{{ comm.text }}</div>
-            <div class="comment__date">{{ comm.created_at }}</div>
+            <div class="comment">{{ comm.created_at|date:"M d, Y" }}</div>
         </div>
         {% endfor %}
-
     </div>
     {% endfor %}
 </div>

@@ -3,13 +3,13 @@
 {% block content %}
         <div class="content__info">
             <h2 class="info__header">Privacy Policy</h2>
-            <p>When you’re ready to go beyond prototyping in Figma, 
+            <p class="main__text">When you’re ready to go beyond prototyping in Figma, 
                 Webflow’s ready to help you bring your </p>
         </div>
         {% for new in news %}
         <div class="news">
             <h4 class="news__header">{{ new.title }}</h4>
-            <p class="news__desc">{{ new.description }}</p>
+            <p class="main__text">{{ new.description }}</p>
             <div class="news__date">
                 <div class="news__date_created">Дата создания: {{ new.created_at|date:"M d, Y" }}</div>
                 <div class="news__date_updated">Дата обновления:{{ new.updated_at|date:"M d, Y"  }}</div>

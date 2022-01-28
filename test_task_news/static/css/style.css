@@ -1,6 +1,9 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -9,9 +12,14 @@ a {
 
 body{
   font-size: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  color: #282938;
 }
 
 .container {
+  width: 100%;
   max-width:1600px;
   height: 92px;
   margin: 0 auto;
@@ -60,7 +68,6 @@ body{
   margin-left: 32px;
   font-family: Poppins;
   font-style: normal;
-  font-weight: 500;
   font-size: 16px;
   line-height: 28px;
 }
@@ -188,4 +195,171 @@ a:hover {
 a:active {
   color: #497DDD; 
 }
+
+.about__as__block{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 128px;
+}
+
+.about__info{
+  width: 592px;
+  height: 300px;
+  padding-top: 32px;
+}
+
+.about__img{
+  width: 547px;
+  height: 366px;
+}
+.about__header{
+  font-size: 18px;
+  line-height: 32px;
+  color: #282938;
+  margin-bottom: 8px;
+}
+
+.about__info {
+  margin-right: 138px;
+}
+
+.about__title{
+  width: 484px;
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 74px;
+  color: #282938;
+  margin-bottom: 31px;
+}
+
+.about__text{
+  width: 484px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #282938;
+  opacity: 0.7;
+}
+
+.whe__we__img{
+  width: 1280px;
+  height: 340px;
+  object-fit:cover; 
+  margin-bottom: 128px;
+}
+
+.block__who__we{
+  background-color: #F4F5F5;
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 80px 109px 80px;
+}
+
+.who__we__title{
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 56px;
+}
+
+.who__we__text{
+  font-size: 16px;
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+.our__mission__block{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #EEF4FA;
+  padding-top: 96px;
+  margin-bottom: 128px;
+}
+
+.our__mission__tap{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 96px;
+  width: 1278px;
+}
+
+.our__mission__img{
+  width: 515px;
+  height: 334px;
+  object-fit:cover;
+}
+
+.our__mission__info{
+  width: 623px;
+}
+
+.our__mission__header{
+  font-size: 16px;
+  line-height: 28px;
+  padding-bottom: 16px;
+}
+
+.our__mission__title{
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 56px;
+  padding-bottom: 16px;
+}
+
+.main__text{
+  font-size: 16px;
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+.footer{
+  background-color: #1C1E53;
+  height: 320px;
+}
+
+.footer__header{
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 64px;
+  color: #FFFFFF;
+}
+
+.footer__text{
+  padding-top: 16px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #F4F6FC;
+  opacity: 0.8;
+}
+
+.footer__info{
+  width: 400px;
+  height: 200px;
+  margin-left: 760px;
+  padding-top: 70px;
+}
+
+.footer__contacts{
+  margin-top: 16px;
+  background-color: #FCD980;
+  width: 517px;
+  height: 70px;
+}
+
+.footer__title{
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.footer__phone__text{
+  display: flex;
+  font-size: 16px;
+  line-height: 28px;
+  opacity: 0.8;
+}
+
+
+
 

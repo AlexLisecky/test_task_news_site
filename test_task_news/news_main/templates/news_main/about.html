@@ -4,13 +4,75 @@
 <div class="content">
     <div class="about__as__block">
         <div class="about__info">
-            <h6>About as</h6>
-            <h2>Our designs solve problems</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam.</p>
+            <h6 class="about__header">About as</h6>
+            <h2 class="about__title">Our designs solve problems</h2>
+            <p class="main__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam.</p>
         </div>
-        <img class="about__img" src="{% static 'img/about_as' %}" alt="">
-    </div> 
+        <div class="about__logo">
+            <img class="about__img" src="{% static 'img/about_as.jpeg' %}" alt="">
+        </div> 
+    </div>
+    <div class="block__who__we">
+        <div class="who__we__tap">
+            <div class="who__we__title">Goal focussed</div>
+            <p class="main__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="who__we__tap">
+            <div class="who__we__title">Continuous improvement</div>
+            <p class="main__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+    <img class="whe__we__img" src="{% static 'img/who_we.jpeg' %}" alt="">
+    <div class="our__mission__block">
+        <div class="our__mission__tap">
+            <div class="our__mission__info">
+                <p class="our__mission__header">Our Mission</p>
+                <div class="our__mission__title">Inspire, Innovate, Share</div>
+                <p class="main__text">Lorem ipsum dolor sit amet, consectetur 
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <img class="our__mission__img" src="{% static 'img/man_in_office.jpeg' %}" alt="">
+        </div>
+        <div class="our__mission__tap">
+            <img class="our__mission__img" src="{% static 'img/man_in_office.jpeg' %}" alt="">
+            <div class="our__mission__info">
+                <p class="our__mission__header">Our Vision</p>
+                <div class="our__mission__title">Laser focus</div>
+                <p class="main__text">Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                    ex ea commodo consequat.</p>
+            </div>     
+        </div>
+    </div>
 </div> 
+<div class="footer">
+       <div class="footer__info">
+           <div class="footer__header">Lets Talk!</div>
+           <p class="footer__text">We are always open to discuss your project, 
+               improve your online presence and help with your 
+               UX/UI design challenges.</p>
+               <div class="footer__contacts">
+                   <div class="footer__title">
+                       <p>Email me at</p>
+                       <p>Call us</p>
+                   </div>
+                   <div class="footer__phone__text">
+                       <p>contact@website.com</p>
+                       <p>0927 6277 28525</p>
+                   </div>
+               </div>
+       </div> 
+</div>
 {% endblock content %}

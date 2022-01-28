@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 LINK_AUTHORISATION = 'https://alexlisecky.amocrm.ru/oauth2/access_token'
@@ -6,29 +8,31 @@ CLIENT_SECRET = '9IiWTRXsu5xnJ5IKoeToc7SA6nS5ZsaWu8oPLYpnhpMR7IGuN11CRLcBv6kdydN
 REDIRECT_URI = 'https://example.com'
 
 
-def get_access_token_with_authorization():
-    data = {
-        'client_id': CLIENT_ID,
-        'client_secret': CLIENT_SECRET,
-        'grant_type': 'authorization_code',
-        'code': 'def50200e05cad5596a90aa3d204b8d134e94a299e766d52267370d84ea5c59b6958dc7ecca1774f9985c3b8b853fdbba1cf92ba1d9fe8e1fb07954a41e5a99b54159954e8d332c5f9d90f04b5954cafbf3f362d1cc8ce349bee67b9d3c7c0122fd9e9134c1071626e94e474c2856071890bc1c3d63f4e485fca034736d50a3d85f301e5071703c6c844f830037a74e66717ec4cc13be3def9dec3f07868972fca4ec115abfeaa77d8ca1aa6aa326adc5a480ed1caa79dc32bf04dc627b94abcd6488beac3ee08e30a99526fd97094574b09acfd5896a68735d240b78cc5511612142a5f35ba6d999daded706125b4af8dfb4b2f6940d2f68e4d4174407f5b0fb7eb292509e868aa0043ec7d78953f0a29909c026f34074de8697dcd0edfadbb1df6d2dc9ebe729566f49a6f7298d03b7e1081c18b603098e2979409e664a17e614f688ecfa079969529eb091d941b3fe7ddc5c57c4026791d1171dabbff198389cd186e24703b9357a7a607e8f3f426a79920cf01516e7075621515bd1c84104fea4bb047c626d6dd478bf2bf04eb035b429d733f1405631f09f96c6f1518a0b93bdad17f9818da70a10a71b38012761db7903323ace4a211c96b4624',
-        'redirect_uri': REDIRECT_URI
-    }
-
-    response = requests.post(LINK_AUTHORISATION, data=data).json()
-
-    return response
-
-
+# def get_access_token_with_authorization():
+#     data = {
+#         'client_id': CLIENT_ID,
+#         'client_secret': CLIENT_SECRET,
+#         'grant_type': 'authorization_code',
+#         'code': 'def502006f9e054da5c8fe3832421830b96efb7f9095159e0762c2b5184ebe2aa670c5b5e65652e27b4c33c2c71eb1e94380acdeaec3f6cb8a5b49f701ade3788c3ea1daa476a7372798dded002c80cc91a4220f4f7afb94beb3ebc3e67481542340ef9919b4f2aa07b8e305acedbf25e4de543bd7bf3ed2060aa4d5c4ded46cdb6137d87ac920927bec85106fc93b4e880f498ba3d16c33958bb2edf883f131c1902a6dcb2246964cfeae208d9e866c4a719dd584c2cd2f9e3fe69a3321487c2cedda247e664a94f47959a203afe8368bc6e88924c12b4316a7723343ef6f2975ee98a255578970a904f334bc5a9ffd60a37721f4edac15c5cc9795d73654729f9ef00992311e02e162acc2f4e3875448793c0baa5c6ba36a97643f0cdf6c250a0eca6d47e0c8b06e11e063af895735880cb2f95dc5399fa0f3055899502e59ff87dd0125bb8e4e7b61e212cb0647b3d96ab3f8aaa856c8da5af5fd7b89385df01beef6994d64993459cedabc3d37c0fc0476a85cb8d19bbbb9fe2da319885a1dc1316f49a28e41ec7f59dc0df0e743e58a28d656f3f8cfaf0d59a8f30ea9692a01006e3e8f089edecb46dc325c6fed22e1ef1ac43cf328c1999211ec',
+#         'redirect_uri': REDIRECT_URI
+#     }
+#
+#     response = requests.post(LINK_AUTHORISATION, data=data).json()
+#
+#     return response
+#
+#
 # response = get_access_token_with_authorization()
-# print(response)
+# print(response['refresh_token'])
+
+#
 
 def get_access_token_on_refresh():
     data = {
         "client_id": CLIENT_ID,
         "client_secret": CLIENT_SECRET,
         "grant_type": "refresh_token",
-        "refresh_token": "def50200afebcfa6aec96cfc6858c8e0fc0b5dad4f1bf1b0293fda5da71911ccc950155ca340b8771fe955ae2161d2b33c6ed3cea1a6ee40d910410ac50001a857274fc03ef665d673e898443bb9217d01908455203e9cb6688b57704a2ba837d9e756a061157017948da68ecde55964adf26e42d2560becb0c074288ad7dd5080d4416b29e982e05ebcb89a619f228b4402eb314d17e57cde4e538d6f44fcf971c4fd656cbd2d3a0c0c573ad9e19c1e34c18ec9f8ae0d5f6067f7c85ebad948d1c4743ba82a2ace5f85367005ba22280ba14429e3143ba7e58526e4f568ac750281c12365fb53389918d884584d61b3cdd78a40c14faf43988c6cd773b97617907d3c40a34a203dc36cc60635b613cf2667714a285b43244bf229ac7a89f123d07d99d88ea9eacf2b6b2fbe96c218559408c9656bc34e5a1e58afc702b552ef6ef6175d97b77f14c72585dd1cc980ef7c5aedd78489361f152320f494c38dedd7559a11c617d490ef4d0120b6b21cdb8c6707a62a1ae15888c41a58f5d77e492611c03a92306d07d634d5e196064225c03134ea408c4bf1392424698ec2f1c836661810924de9400ce012b63522b2a52dd5e0d4daea726188dc84f65628753b7042d430621962a50885",
+        "refresh_token": 'def50200df032c126b60ec517e9bae804b0c131087ae8912269bd2595ca451f06d56414afbf973273c9de66f34150332bfdf37c6892b944bf8b7a7817155506d54c19d222765a0c4dda5dd6f384a34003c9db036e0c7361574436d6c9fa78b43059af9f0ac5d27df8029f8d85c0262b3f75fe83f3c7e2de07a8ad066d34a1b3261378022dc6bba4d301b8d2f97623cf7132adf5a412a80a4576ac9ce27fcd63df3199d5938ed768e89b8fdd01d6f80a9b1688514af632f93d62072c047fb7aaa585f6cbba2bb9c60ac61e37db5348019d1ae0c49fafb5ba976b6cde90f2a51819db6136dcf39af826869e07d1c762b64082ee77ff928d28437fa0fbb7f03868620597b1c64d5603de416030bc5a1cce9311416fa48b196cb8bbceca1043ea4110da3708863fbe79dd7cb2db94076fe6d58fd504611da23318f479c6ec156ffa82ea919619d1c167a470765eacf1ebed04e901fd6c4eca6394a456e02e78e33c230d351034e8faefa03c33bb8a88e9a8bcc49f7770ccba6e4468a9079b93e7f0fa039214cc3263c398c84c05210f40f0c78bc5b68fe4296ed05fa17f8e28c7bf2338318d203751e3d46e7f2ba165de440feb42731437426e69da6f0cc68e8dbba896ff93563d0146a1e8f',
         "redirect_uri": REDIRECT_URI
     }
 
@@ -38,8 +42,7 @@ def get_access_token_on_refresh():
 
 
 response = get_access_token_on_refresh()
-print(response['access_token'])
-
+print(response)
 access_token = response['access_token']
 
 
@@ -52,6 +55,23 @@ def get_deals():
 
 
 def add_deals():
-    url = 'https://alexlisecky.amocrm.ru/api/v4/leads'
+    url = 'https://alexlisecky.amocrm.ru/api/v4/leads/complex'
     headers = {'Authorization': 'Bearer ' + access_token}
-    response = requests.post(url, headers=headers)
+    data = [{
+        'name': 'test',
+        'price': 5000,
+        '_embedded': {
+            'contacts': [
+                {
+                    'first_name': 'alex',
+
+                }
+            ]
+        }
+    }
+    ]
+    response = requests.post(url, headers=headers, data=json.dumps(data))
+    print(response.json())
+
+
+add_deals()

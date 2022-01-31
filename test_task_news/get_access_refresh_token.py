@@ -86,11 +86,41 @@ def add_deals():
             'name': 'test',
             'price': 11000,
             '_embedded': {
+                # "metadata": {
+                #     "category": "forms",
+                #     "form_id": 123,
+                #     "form_name": "Форма на сайте",
+                #     "form_page": "https://example.com",
+                #     "form_sent_at": 1608905348,
+                #     "ip": "8.8.8.8",
+                #     "referer": "https://example.com/form.html"
+                # },
                 'contacts': [
+
                     {
                         'first_name': 'alex',
                         'last_name': 'lisecky',
                         'created_at': 1643580468,
+                        'custom_fields_values': [
+                            {
+                                'field_code': 'EMAIL',
+                                'values': [
+                                    {
+                                        'enum_code': "WORK",
+                                        'value': "unsorted example@example.com"
+                                    }
+                                ]
+                            },
+                            {
+                                "field_code": "PHONE",
+                                "values": [
+                                    {
+                                        "enum_code": "WORK",
+                                        "value": "+79129876543"
+                                    }
+                                ]
+                            },
+                        ]
                     }
                 ],
                 'companies': [
@@ -105,17 +135,7 @@ def add_deals():
                                         "enum_code": "WORK"
                                     }
                                 ]
-                            }
-                        ]
-                    }
-                ],
-                "custom_fields_values": [
-                    {
-                        "field_id": 5,
-                        "values": [
-                            {
-                                "value": True
-                            }
+                            },
                         ]
                     }
                 ],
@@ -127,4 +147,44 @@ def add_deals():
     print('успешно')
 
 
-add_deals()
+def get_deal(id):
+    access_token = get_access_token()
+
+    url = f'https://alexlisecky.amocrm.ru/api/v4/leads/{id}'
+    headers = {'Authorization': 'Bearer ' + access_token}
+
+    response = requests.get(url, headers=headers)
+    print(response.json())
+    print('успешно')
+
+
+def update_deal(id):
+    access_token = get_access_token()
+
+    url = f'https://alexlisecky.amocrm.ru/api/v4/leads/{id}'
+    headers = {'Authorization': 'Bearer ' + access_token}
+
+    data = {
+        'id': id,
+        'name': '22test',
+        'price': 22000,
+        'custom_fields_values': [
+            {
+                'field_id': 300299,
+                'values': [
+                    {
+                        'value': 'pole tekst'
+                    }
+                ]
+            }
+        ]
+    }
+
+    response = requests.patch(url, headers=headers, data=json.dumps(data))
+
+    print(response.json())
+    print('успешно')
+
+
+# add_deals()
+update_deal(963615)
